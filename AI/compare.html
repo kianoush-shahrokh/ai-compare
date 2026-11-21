@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مقایسه هوش مصنوعی‌ها | AI Compare</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== هدر ===== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">🤖 AI Compare</a>
+      <nav class="nav" id="nav">
+        <a href="index.html">خانه</a>
+        <a href="about.html">معرفی AIها</a>
+        <a href="compare.html" class="active">مقایسه</a>
+        <a href="pricing.html">قیمت اشتراک</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="منو">☰</button>
+    </div>
+  </header>
+
+  <!-- ===== عنوان صفحه ===== -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>مقایسه هوش مصنوعی‌ها</h1>
+      <p>ویژگی‌ها، قیمت و امکانات ۱۲ ابزار برتر را کنار هم ببین</p>
+    </div>
+  </section>
+
+  <!-- ===== کنترل‌ها ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="compare-controls">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 جستجوی نام هوش مصنوعی...">
+
+        <select id="filterOrigin" class="filter-select">
+          <option value="all">همه (خارجی و ایرانی)</option>
+          <option value="foreign">فقط خارجی</option>
+          <option value="iranian">فقط ایرانی</option>
+        </select>
+
+        <select id="filterFree" class="filter-select">
+          <option value="all">همه پلن‌ها</option>
+          <option value="yes">دارای نسخه رایگان</option>
+          <option value="no">فقط پولی</option>
+        </select>
+      </div>
+
+      <p id="resultCount" class="result-count"></p>
+
+      <!-- ===== جدول مقایسه ===== -->
+      <div class="table-wrapper">
+        <table class="compare-table" id="compareTable">
+          <thead>
+            <tr>
+              <th data-sort="name">نام <span class="sort-icon">↕</span></th>
+              <th data-sort="origin">کشور <span class="sort-icon">↕</span></th>
+              <th data-sort="maker">سازنده <span class="sort-icon">↕</span></th>
+              <th data-sort="free">نسخه رایگان <span class="sort-icon">↕</span></th>
+              <th data-sort="image">تولید تصویر <span class="sort-icon">↕</span></th>
+              <th data-sort="persian">پشتیبانی فارسی <span class="sort-icon">↕</span></th>
+              <th data-sort="price">قیمت پایه <span class="sort-icon">↕</span></th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- با JS پر می‌شه -->
+          </tbody>
+        </table>
+      </div>
+
+      <p id="emptyState" class="empty-state" style="display:none;">
+        😕 نتیجه‌ای برای جستجوی شما پیدا نشد.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ===== فوتر ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> AI Compare — پروژه دانشگاهی</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/compare.js"></script>
+</body>
+</html>

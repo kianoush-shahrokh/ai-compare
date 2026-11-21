@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قیمت اشتراک هوش مصنوعی‌ها | AI Compare</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== هدر ===== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">🤖 AI Compare</a>
+      <nav class="nav" id="nav">
+        <a href="index.html">خانه</a>
+        <a href="about.html">معرفی AIها</a>
+        <a href="compare.html">مقایسه</a>
+        <a href="pricing.html" class="active">قیمت اشتراک</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="منو">☰</button>
+    </div>
+  </header>
+
+  <!-- ===== عنوان صفحه ===== -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>قیمت اشتراک هوش مصنوعی‌ها</h1>
+      <p>پلن‌های ماهانه و سالانه را مقایسه کن و هوشمندانه انتخاب کن</p>
+    </div>
+  </section>
+
+  <!-- ===== سوییچ ماهانه/سالانه ===== -->
+  <section class="section">
+    <div class="container">
+
+      <div class="billing-toggle-wrapper">
+        <span class="billing-label active" id="labelMonthly">ماهانه</span>
+        <button class="billing-toggle" id="billingToggle" aria-label="تغییر دوره پرداخت">
+          <span class="billing-knob"></span>
+        </button>
+        <span class="billing-label" id="labelYearly">سالانه <small>(۲۰٪ تخفیف)</small></span>
+      </div>
+
+      <!-- ===== کارت‌های قیمت ===== -->
+      <div class="pricing-grid" id="pricingGrid">
+        <!-- با JS پر می‌شه -->
+      </div>
+
+      <p class="pricing-note">
+        * قیمت‌ها به دلار آمریکا و بر اساس تعرفه رسمی سرویس‌دهنده است. برای کاربران ایرانی، هزینه نهایی بسته به روش پرداخت (ارزی یا ریالی) متفاوت خواهد بود.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ===== فوتر ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> AI Compare — پروژه دانشگاهی</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/pricing.js"></script>
+</body>
+</html>

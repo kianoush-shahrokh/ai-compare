@@ -1,0 +1,870 @@
+/* ===== متغیرها ===== */
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --bg: #0f172a;
+  --bg-light: #1e293b;
+  --card: #1e293b;
+  --border: #334155;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --radius: 14px;
+}
+
+/* ===== ریست ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Tahoma, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== هدر ===== */
+.header {
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav a {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--primary);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* ===== Hero ===== */
+.hero {
+  padding: 90px 0;
+  text-align: center;
+  background: radial-gradient(circle at top, #1e293b 0%, #0f172a 70%);
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== دکمه‌ها ===== */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ===== بخش‌ها ===== */
+.section {
+  padding: 70px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+/* ===== کارت‌ها ===== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary);
+}
+
+.card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.card-maker {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.card-desc {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+}
+
+.card-link {
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* ===== CTA ===== */
+.cta {
+  padding: 70px 0;
+  text-align: center;
+  background: var(--bg-light);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.cta h2 {
+  font-size: 1.7rem;
+  margin-bottom: 12px;
+}
+
+.cta p {
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+/* ===== فوتر ===== */
+.footer {
+  padding: 28px 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ===== ریسپانسیو ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    background: var(--bg-light);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 20px;
+    gap: 14px;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== صفحه معرفی ===== */
+.page-hero {
+  padding: 60px 0 40px;
+  text-align: center;
+  background: radial-gradient(circle at top, #1e293b 0%, #0f172a 70%);
+}
+
+.page-hero h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.page-hero p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ===== پروفایل AI ===== */
+.ai-profile {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 24px;
+  transition: border-color 0.2s;
+}
+
+.ai-profile:hover {
+  border-color: var(--primary);
+}
+
+.ai-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.ai-profile-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.ai-profile h2 {
+  font-size: 1.4rem;
+  margin-bottom: 2px;
+}
+
+.ai-maker {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.ai-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+  line-height: 1.9;
+}
+
+/* ===== تگ‌ها ===== */
+.ai-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.tag {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--primary);
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+/* ===== ویژگی‌ها ===== */
+.ai-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  padding: 16px;
+  background: var(--bg);
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+
+.feature {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.feature strong {
+  color: var(--text);
+}
+
+/* ===== ریسپانسیو ===== */
+@media (max-width: 600px) {
+  .ai-profile {
+    padding: 20px;
+  }
+
+  .ai-profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ai-profile h2 {
+    font-size: 1.2rem;
+  }
+
+  .page-hero h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ===== لوگوی AI ===== */
+.ai-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: #fff;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .ai-logo {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== لوگوی AI ===== */
+.ai-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: #fff;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .ai-logo {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== کنترل‌های مقایسه ===== */
+.compare-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 220px;
+  padding: 12px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+}
+
+.filter-select {
+  padding: 12px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.filter-select:focus {
+  border-color: var(--primary);
+}
+
+.result-count {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+/* ===== جدول ===== */
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 780px;
+}
+
+.compare-table th {
+  background: var(--bg);
+  padding: 16px 14px;
+  text-align: right;
+  font-size: 0.9rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.compare-table th:hover {
+  color: var(--primary);
+}
+
+.sort-icon {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-right: 4px;
+}
+
+.compare-table td {
+  padding: 14px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.compare-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.compare-table tbody tr:hover {
+  background: rgba(99, 102, 241, 0.06);
+}
+
+.ai-name-cell {
+  color: var(--text) !important;
+  font-weight: bold;
+}
+
+/* ===== بج کشور ===== */
+.badge {
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.badge.foreign {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+}
+
+.badge.iranian {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+/* ===== خالی ===== */
+.empty-state {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 40px 0;
+  font-size: 1rem;
+}
+
+/* ===== ریسپانسیو ===== */
+@media (max-width: 768px) {
+  .compare-controls {
+    flex-direction: column;
+  }
+
+  .search-input,
+  .filter-select {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== سوییچ پرداخت ===== */
+.billing-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.billing-label {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.billing-label.active {
+  color: var(--text);
+  font-weight: bold;
+}
+
+.billing-label small {
+  font-size: 0.75rem;
+  color: #4ade80;
+}
+
+.billing-toggle {
+  position: relative;
+  width: 54px;
+  height: 28px;
+  background: var(--border);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.billing-toggle.active {
+  background: var(--primary);
+}
+
+.billing-knob {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.billing-toggle.active .billing-knob {
+  transform: translateX(-26px);
+}
+
+/* ===== شبکه قیمت ===== */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* ===== کارت قیمت ===== */
+.pricing-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary);
+}
+
+.pricing-card.popular {
+  border-color: var(--primary);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  right: 50%;
+  transform: translateX(50%);
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 4px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pricing-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.pricing-header h3 {
+  font-size: 1.2rem;
+  margin-bottom: 2px;
+}
+
+.pricing-maker {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.pricing-price {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.price-amount {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.price-period {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-right: 4px;
+}
+
+.price-monthly-eq {
+  display: block;
+  color: #4ade80;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.price-free {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #4ade80;
+}
+
+.pricing-free-status {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 0.82rem;
+}
+
+.free-badge { color: #4ade80; }
+.no-free-badge { color: #f87171; }
+
+/* ===== لیست ویژگی‌ها ===== */
+.pricing-features {
+  list-style: none;
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.pricing-features li {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+  line-height: 1.6;
+}
+
+.pricing-features li:last-child {
+  border-bottom: none;
+}
+
+/* ===== دکمه ===== */
+.pricing-btn {
+  width: 100%;
+  text-align: center;
+}
+
+/* ===== نکته ===== */
+.pricing-note {
+  margin-top: 32px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* ===== ریسپانسیو ===== */
+@media (max-width: 600px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .billing-toggle-wrapper {
+    gap: 10px;
+  }
+
+  .billing-label {
+    font-size: 0.85rem;
+  }
+}
